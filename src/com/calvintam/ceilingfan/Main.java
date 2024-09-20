@@ -2,8 +2,6 @@ package com.calvintam.ceilingfan;
 
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
@@ -19,19 +17,25 @@ public class Main {
 
             String str = s.nextLine();
             char input = str.toUpperCase().charAt(0);
-            if (input == 'S' || input == 'D' || input == 'C'){
-                if (input == 'S'){
+            switch (input){
+                case 'S':
                     fan.pullSpeedCord();
-                }else if (input == 'D') {
+                    System.out.println(fan.getStatus());
+                    break;
+                case 'D':
                     fan.pullDirectionCord();
-                }
-                System.out.println(fan.getStatus());
-            }else if (input == 'E'){
-                System.out.println("Thank you for using the program");
-                Thread.sleep(3000);
-                return;
-            }else{
-                System.out.println("Invalid Input!");
+                    System.out.println(fan.getStatus());
+                    break;
+                case 'C':
+                    System.out.println(fan.getStatus());
+                    break;
+                case 'E':
+                    System.out.println("Thank you for using the program");
+                    Thread.sleep(3000);
+                    return;
+                default:
+                    System.out.println("Invalid Input!");
+                    break;
             }
         }
     }
