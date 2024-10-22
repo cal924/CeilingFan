@@ -14,7 +14,7 @@ public class CeilingFanTest {
     @Before
     public void setUp() {
         fan = new CeilingFan(); // Initialize before each test
-        System.out.println("Test start");
+        System.out.println("Test start 2");
     }
 
     // Test that initial state is OFF and not reversed
